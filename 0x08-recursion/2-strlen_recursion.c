@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * factorial - function that returns the factorial of a given number.
- * @n: number
- * Return: factorial of number, -1 if negative n
+ * _strlen_recursion - function that returns the length of a string.
+ * @s: string
+ * Return: string length
  */
 
-int factorial(int n)
+int _strlen_recursion(char *s)
 {
-	if (n < 0)
-		return (-1);
-	else if (n == 0 || n == 1)
-		return (n);
-	else
-		return (n * factorial(n - 1));
+	if (*s == '\0')
+		return (0);
+
+	s++;
+	return (1 + _strlen_recursion(s));
 }
